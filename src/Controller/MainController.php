@@ -9,6 +9,8 @@
 
 namespace Controller;
 
+use Model\HeaderManager;
+
 /**
  * Class ItemController
  *
@@ -22,6 +24,14 @@ class MainController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('main/index.html.twig');
+        $header = $this->getHeader();
+        return $this->twig->render('main/index.html.twig', ['header'=> $header]);
+    }
+
+    public function getHeader()
+    {
+        $headerManager = new HeaderManager();
+        $header = $headerManager->selectAll();
+        return $header;
     }
 }

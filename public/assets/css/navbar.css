@@ -1,0 +1,62 @@
+/* Navbar */
+@font-face {
+    font-family: plaza;
+    src: url(../fonts/29849_PlazaITC-Normal.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+.navbar-fixed-top {
+    background-color: #343232;
+    height: 70px;
+
+}
+
+
+.navbar-default .navbar-collapse {
+    background-color: #343232;
+}
+.navbar-default .navbar-nav>li>a {
+    font-size: 1.5em;
+    color: #e5dcdc;
+    line-height: 150%;
+    font-family: "plaza", "Open Sans";
+
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: #728e20;
+}
+
+.logo{
+    width: 70px;
+    height: 60px;
+}
+
+.navbar-nav {
+    float: right;
+}
+.navbar-brand {
+    height: inherit;
+    display: flex;
+    padding: 3px;
+}
+.cameleon {
+
+    font-size: 1.7em;
+    color: #728e20;
+    line-height: 200%;
+    font-family: "plaza", "Open Sans";
+    height: inherit;
+    margin-left: 1vw;
+}
+
+@media screen and (max-width: 400px) {
+    .cameleon {
+        font-size: 1em;
+    }
+
+}
+.navbar-default .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: #728e20;
+}
