@@ -20,24 +20,26 @@ footer p {
     margin: 0;
     padding: 0;
 }
+
 .listlink a{
     padding: 0px;
     margin: 0px;
     color: #C5C1C2 ;
 }
-footer {
 
+footer {
     background-color:black;
 }
+
 .face {
     float: right;
     max-height: 20%;
 }
+
 .face img {
     width: 40%;
     height: auto;
     padding: 10px;
-
 }
 
 @font-face {
@@ -105,7 +107,6 @@ h3 {
     font-size: 2em;
     font-family: plaza;
 }
-
 section:nth-child(odd){
     background-color:#EEE;
 }
@@ -158,4 +159,38 @@ section:nth-child(even){
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+/* Gallery */
+
+.gallery .container-img img {
+    width: 100%;
+    height: 260px;
+    max-width: 100%;
+}
+
+.gallery .modal img {
+    width: 100%;
+    height: 100%;
+}
+
+.gallery .button-container{
+    padding: 0 30px;
+}
+
+.gallery .button-container a {
+    background-color: #728e20;
+    color: white;
+    width: 250px;
+    height: 40px;
+}
+
+a.thumbnail:hover {
+    border: 1px #728e20 solid;
+}
+
+@media screen and (max-width: 500px) {
+    .gallery .container-img img {
+        max-height: 120px;
+    }
 }

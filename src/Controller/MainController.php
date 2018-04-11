@@ -8,11 +8,11 @@
  */
 
 namespace Controller;
-use Model\AlertManager;
-
-use Model\SliderManager;
 
 use Model\TeamManager;
+use Model\GalleryManager;
+use Model\AlertManager;
+use Model\SliderManager;
 
 class MainController extends AbstractController
 {
@@ -26,11 +26,16 @@ class MainController extends AbstractController
     {
         $teamManager = new TeamManager();
         $team = $teamManager->selectAll();
+        $galleryManager = new GalleryManager();
+        $gallery = $galleryManager->selectAll();
         $alertManager = new AlertManager();
         $alert = $alertManager->selectFirst();
         $sliderManager = new SliderManager();
-        $slider = $sliderManager->selectAll();     
-        return $this->twig->render('main/index.html.twig', ['alert' => $alert,'slider'=> $slider,'team'=>$team]);
+        $slider = $sliderManager->selectAll();
+        return $this->twig->render('main/index.html.twig', ['alert' => $alert,
+                                                                  'slider'=> $slider,
+                                                                  'team'=>$team,
+                                                                  'gallery'=>$gallery]);
     }
 
 }

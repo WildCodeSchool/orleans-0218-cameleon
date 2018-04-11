@@ -1,0 +1,28 @@
+<section class="container gallery">
+    <div class="row">
+        <div>
+            <h2>Galerie d'image</h2>
+        </div>
+        <div>
+            {% for picture in gallery %}
+                <div class="col-xs-6 col-md-4 container-img">
+                    <a href="#" class="thumbnail" data-toggle="modal" data-target="#myModal{{ loop.index }}">
+                        <img src="{{ picture.url }}" alt="{{ picture.alt }}">
+                    </a>
+                </div>
+                <div class="modal" id="myModal{{ loop.index }}" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <img src="{{ picture.url }}" alt="{{ picture.alt }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="button-container text-center">
+            <a class="btn" href="/gallery" role="button">Voir plus d'images</a>
+        </div>
+    </div>
+</section>
