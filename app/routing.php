@@ -11,11 +11,18 @@
 
 $routes = [
     'Main' => [ // Controller
-        ['index', '/', 'GET'], // action, url, method    ],
+        ['index', '/', 'GET'], // action, url, method
+    ],
+
+    'CompanyAdmin' => [
+        ['index', '/admin/company','GET'],
+        ['edit', '/admin/company/edit','POST'],
+        ['edit', '/admin/company/edit','GET'],
     ],
     'HeaderAdmin' => [
         ['index', '/admin/header','GET'],
         ['editAlert', '/admin/header/editAlert','POST'],
+
     ],
     'Place' => [
         ['index', '/lieux','GET'],
@@ -33,5 +40,10 @@ $routes = [
     ],
     'Gallery' => [
         ['index','/gallery', 'GET'],
+    ],
+    'GalleryAdmin' => [
+        ['index', '/admin/gallery', 'GET'],
+        ['insert', '/admin/gallery/insert', 'POST'],
+        ['delete', '/admin/gallery/delete/', 'POST'],
     ],
 ];

@@ -17,7 +17,7 @@
     border:0px;
 }
 .navbar-default .navbar-nav>li>a {
-    font-size: 25px;
+    font-size: 2rem;
     color: #FFF;
     line-height: 150%;
     font-family: "plaza", "Open Sans";
@@ -41,7 +41,7 @@
     padding: 3px;
 }
 .cameleon {
-    font-size: 1.7em;
+    font-size: 3rem;
     color: #FFF;
     line-height: 200%;
     font-family: "plaza", "Open Sans";
@@ -49,12 +49,49 @@
     margin-left: 1vw;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 425px) {
     .cameleon {
-        font-size: 1em;
+        font-size: 2rem;
     }
 
 }
 .navbar-default .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
     background-color: #aed135;
+}
+
+@media (max-width: 991px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
 }

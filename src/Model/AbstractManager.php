@@ -69,20 +69,34 @@ abstract class AbstractManager
      */
     public function delete(int $id)
     {
-        //TODO : Implements SQL DELETE request
+        $statement = $this->pdoConnection->prepare("DELETE FROM $this->table WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
     }
 
 
     /**
-     * INSERT one row in dataase
+     * INSERT one row in database
      *
      * @param Array $data
      */
     public function insert(array $data)
     {
-        //TODO : Implements SQL INSERT request
-    }
+        $query = "INSERT INTO $this->table (";
+        foreach($data as $key=>$value){
+            $queryKey[] = $key;
+        }
 
+        $query .= implode(', ', $queryKey);
+        $query .= ') VALUES (:';
+        $query .= implode(', :', $queryKey);
+        $query .= ')';
+        $statement = $this->pdoConnection->prepare($query);
+        foreach($data as $key=>$value){
+            $statement->bindValue($key, $value);
+        }
+        $statement->execute();
+    }
 
     /**
      * @param array $id

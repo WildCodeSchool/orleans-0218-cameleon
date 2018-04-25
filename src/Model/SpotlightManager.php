@@ -4,7 +4,7 @@ namespace Model;
 
 class SpotlightManager extends AbstractManager
 {
-    const TABLE = 'Spotlight';
+    const TABLE = 'spotlight';
 
     public function __construct()
     {

@@ -1,0 +1,44 @@
+{% extends '/admin/body.html.twig' %}
+{% block content %}
+    <div id="company" class="tab-pane section-admin">
+        <section id="company">          
+            <form action="/admin/company/edit" method="POST">
+                <div class="row">
+                    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6">
+                        <input name="id" type="hidden" value="{{ company.id }}"/>
+                        <div class="form-group">
+                            <label for="phone"><span class="title_admin_comp">Numero de telephone :</span></label>
+                            <input class="form-control" type="tel" id="phone"
+                                    name="phone" value="{{ company.phone }}"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="facebook"><span class="title_admin_comp">Facebook :</span></label>
+                            <input class="form-control" type="url" id="facebook"
+                                    name="facebook" value="{{ company.facebook }}"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="tweeter"><span class="title_admin_comp">Tweeter :</span></label>
+                            <input class="form-control" type="url" id="tweeter"
+                                    name="tweeter" value="{{ company.tweeter }}"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="instagram"><span class="title_admin_comp">Instagram :</span></label>
+                            <input class="form-control" type="url" id="instagram"
+                                    name="instagram" value="{{ company.instagram }}"/>
+                        </div>
+                    </div>
+                    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6">
+                        <div class="form-group">
+                            <label for="mentions_legales"><span class="title_admin_comp">Mentions legales :</span></label>
+                            <textarea class="form-control" id="mentions_legales"
+                                    name="mentions_legales" rows="14">{{ company.mentions_legales }}</textarea>
+                        </div>                    
+                    </div>
+                    <div class="col-xs-12 text-center">
+                        <input type="submit" value="Valider" class="btn btn-primary">
+                    </div>
+                </div>
+            </form>                
+        </section>
+    </div>
+{% endblock %}

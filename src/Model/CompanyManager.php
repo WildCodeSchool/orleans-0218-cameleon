@@ -5,7 +5,7 @@ namespace Model;
 
 class CompanyManager extends AbstractManager
 {
-    const TABLE = 'Company';
+    const TABLE = 'company';
 
     public function __construct()
     {

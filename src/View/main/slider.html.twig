@@ -1,5 +1,5 @@
 <header class="container-fluid slider">
-    {% if slider[0].picture is defined %} <img src="{{ slider[0].picture }}" alt="{{ slider[0].alt }}" class="img-responsive visible-xs"> {%  endif %}
+    {% if slider[0].picture is defined %} <img src="{{ slider[0].picture }}" alt="{{ slider[0].alt }}" class="img-responsive visible-xs img-slider"> {%  endif %}
 
     <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
 
@@ -13,7 +13,7 @@
             {% for image in slider %}
 
                 <div class="item {% if loop.index == 1 %} active {% endif %} ">
-                    <img src="{{ image.picture }}" alt="{{ image.alt }}">
+                    <img src="{{ image.picture }}" alt="{{ image.alt }}" class="imgs-slider img-responsive">
 
                 </div>
             {% endfor %}

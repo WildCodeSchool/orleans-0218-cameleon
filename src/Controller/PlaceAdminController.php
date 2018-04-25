@@ -10,6 +10,7 @@
 namespace Controller;
 
 use Model\PlaceManager;
+use Structures\Notification;
 
 /**
  * Class ItemController
@@ -23,10 +24,9 @@ class PlaceAdminController extends AbstractController
      */
     public function index()
     {
+        $notification = (new notification())->getNotification('notification');
         $placeManager = new PlaceManager();
         $infos = $placeManager->selectAll();
-        $notification = $_SESSION['notification'] ?? null;
-        session_destroy();
         return $this->twig->render('admin/place.html.twig',
             ['places'=>$infos,'notification'=>$notification]);
     }
@@ -38,25 +38,25 @@ class PlaceAdminController extends AbstractController
                 $cleanPost[$key] = trim($value);
             }
             $placeManager = new PlaceManager();
-            $notification = ['type'=>'success','message'=>'L\'enregistrement s\'est bien effectué'];
-            if ((preg_match('/-?[0-9]+.[0-9]+,\s?-?[0-9]+.[0-9]+/', $cleanPost['coord-12'])
+            $notification = new Notification();
+            $notification->setNotification('success', 'L\'enregistrement s\'est bien déroulé');
+            try {
+                 if ((preg_match('/-?[0-9]+.[0-9]+,\s?-?[0-9]+.[0-9]+/', $cleanPost['coord-12'])
                     ||$cleanPost['coord-12'] == null )&&
                 (preg_match('/-?[0-9]+.[0-9]+,\s?-?[0-9]+.[0-9]+/', $cleanPost['coord-19'])
                     ||$cleanPost['coord-19'] == null )) {
-                try {
                     $placeManager->update($cleanPost['id'], [
                         'adress_day'=>$cleanPost['adress-12'],
                         'coord_day'=>$cleanPost['coord-12'],
                         'adress_evening'=>$cleanPost['adress-19'],
                         'coord_evening'=>$cleanPost['coord-19'],
                     ]);
-                } catch (\Exception $e) {
-                    $notification = ['type'=>'danger','message'=>$e->getMessage()];
+                } else {
+                    throw new \Exception('Les coordonnées en sont pas valides.');
                 }
-            } else {
-                $notification = ['type' => 'danger', 'message' => 'Les coordonnées ne sont pas valides'];
+            } catch (\Exception $e) {
+                $notification->setNotification('danger', $e->getMessage());
             }
-            $_SESSION['notification']=$notification;
         }
         header('location:/admin/place');
         exit();

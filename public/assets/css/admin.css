@@ -1,0 +1,23 @@
+.gallery-admin img {
+    height: 50px;
+    width: 80px;
+}
+
+.gallery-admin label {
+    font-size: 0.8em;
+}
+
+.gallery-admin h3 {
+    text-align: center;
+}
+.gallery-admin label {
+    font-size: 0.6em;
+}
+
+.gallery-admin .jumbotron {
+    background-color: white;
+}
+
+.gallery-admin th {
+    font-size: 0.7em;
+}

@@ -1,13 +1,15 @@
-<section class="container gallery">
-    <div class="row">
-        <div>
-            <h2>Galerie d'image</h2>
+<section class="container-fluid gallery">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h2>Galerie d'images</h2>
+            </div>
         </div>
-        <div>
+        <div class="row">
             {% for picture in pictures %}
-                <div class="col-xs-6 col-md-4 container-img text-center">
-                    <a href="#" class="thumbnail" data-toggle="modal" data-target="#galleryModal{{ loop.index }}">
-                        <img class=".img-responsive" src="{{ picture.path }}" alt="{{ picture.alt }}">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 img-container">
+                    <a data-toggle="modal" data-target="#galleryModal{{ loop.index }}">
+                        <img class="image-responsive" src="{{ picture.path}} " alt="{{ picture.alt }}">
                     </a>
                 </div>
                 <div class="modal" id="galleryModal{{ loop.index }}" tabindex="-1" role="dialog">
@@ -21,8 +23,8 @@
                 </div>
             {% endfor %}
         </div>
-        <div class="button-container text-center">
-            <a class="btn" href="/gallery" role="button">Voir plus d'images</a>
-        </div>
+    </div>
+    <div class="button-container text-center">
+        <a class="btn" href="/gallery" role="button">Voir plus d'images</a>
     </div>
 </section>

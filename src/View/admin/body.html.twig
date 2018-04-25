@@ -1,4 +1,7 @@
 {% extends 'layout.html.twig' %}
+{% block stylesheet %}
+    <link rel="stylesheet" media="screen" href="/assets/css/admin.css">
+{% endblock %}
 
 {% block body %}
     {% if notification.type is not empty %}
@@ -24,9 +27,10 @@
                     </div>
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav">
-                            <li><a data-toggle="tab" href="#entreprise">Entreprise</a></li>
+                            <li><a href="/admin/company">Entreprise</a></li>
+                            <li><a data-toggle="tab" href="#header">Présentation</a></li>
                             <li><a href="/admin/header">Présentation</a></li>
-                            <li><a data-toggle="tab" href="#galerie">Galerie</a></li>
+                            <li><a href="/admin/gallery">Galerie</a></li>
                             <li><a href="/admin/place">Où nous trouver</a></li>
                             <li><a data-toggle="tab" href="#menus">Menus</a></li>
 
