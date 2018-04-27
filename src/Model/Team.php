@@ -14,6 +14,7 @@ class Team
     private $name;
     private $description;
     private $picture;
+    private $picture_description;
 
     /**
      * @return mixed
@@ -78,4 +79,21 @@ class Team
     {
         $this->picture = $picture;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPictureDescription()
+    {
+        return $this->picture_description;
+    }
+
+    /**
+     * @param mixed $picture_description
+     */
+    public function setPictureDescription($picture_description): void
+    {
+        $this->picture_description = $picture_description;
+    }
+
 }

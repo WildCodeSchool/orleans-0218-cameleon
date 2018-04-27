@@ -1,5 +1,6 @@
 $(document).ready(function($){
 
+
     //Map definition
     var mymap = L.map('map').setView([47.89339675,1.8941864],13);
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -21,5 +22,16 @@ $(document).ready(function($){
             variableHolder["marker-"+$(this).attr('id')].bindPopup("<h5>" + day + ' ' + hour + "</h5>" + $(this).html());
         }});
     });
+
+    $('.coordinates-generator').click(function (){
+        id= $(this).attr('id');
+        adress = $('#'+id.substr(0, id.lastIndexOf('-'))+'-adress').val();
+        $.ajax({
+            url: "https://maps.googleapis.com/maps/api/geocode/json?address="+adress+"&key=AIzaSyAtSWBbWkrbinIGgux1wLfeAVIAZxLYKHw",
+        }).success(function( data ) {
+            $('#'+id.substr(0, id.lastIndexOf('-'))+'-coord').val(data.results[0].geometry.location.lat+','+data.results[0].geometry.location.lng);
+        });
+    });
+
 
 

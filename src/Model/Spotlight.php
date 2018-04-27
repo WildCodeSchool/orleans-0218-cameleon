@@ -7,6 +7,23 @@ class Spotlight
     private $id;
     private $text;
     private $photo;
+    private $alt;
+
+    /**
+     * @return mixed
+     */
+    public function getAlt()
+    {
+        return $this->alt;
+    }
+
+    /**
+     * @param mixed $alt
+     */
+    public function setAlt($alt): void
+    {
+        $this->alt = $alt;
+    }
 
     public function getId(): int
     {

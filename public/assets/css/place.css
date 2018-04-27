@@ -11,4 +11,13 @@
 
 h3{
     color:#728e20;
+    margin-top:5px;
+}
+
+.marker{
+    font-size:0.9em;
+}
+
+.hour{
+    font-size:0.9em;
 }

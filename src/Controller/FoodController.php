@@ -22,9 +22,9 @@ class FoodController extends AbstractController
         $foodManager = new FoodManager();
         $foods = $foodManager->selectFoodByCategory();
         $foodCategories = [];
-        foreach($foods as $food) {
+        foreach ($foods as $food) {
             $foodCategories[$food['categoryName']][] = $food;
         }
-        return $this->twig->render('food/list.html.twig', ['foodCategories'=>$foodCategories]);
+        return $this->twig->render('food/list.html.twig', ['foodCategories' => $foodCategories]);
     }
 }

@@ -1,0 +1,21 @@
+{% extends '/admin/body.html.twig' %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <h3>{{ category.name }}</h3>
+        </div>
+    </div>
+    <form action="/admin/menu/editCategory" method="POST" role="form">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label for="name">Categorie * :</label>
+                    <input type="hidden" value="{{ category.id }}" name="id" required="required">
+                    <input type="text" class="form-control" name="name" value="{{ category.name }}">
+                    <button type="submit" class="btn btn-primary">Valider</button>
+                    <a href="/admin/menu" class="btn btn-default">Retour</a>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

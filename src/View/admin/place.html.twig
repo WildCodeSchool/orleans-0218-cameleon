@@ -7,16 +7,51 @@
                     <li><a data-toggle="tab" href="#tab-{{ place.day }}">{{ place.day }}</a></li>
                 {% endfor %}
             </ul>
-
             <div class="tab-content">
-            {% for place in places %}
-                <div id="tab-{{ place.day }}" class="tab-pane fade {% if loop.first %} in active {% endif %}">
-                    <div class="row day">
-                        <div class="col-xs-12">
-                            <h3>
-                                {{ place.day }}
-                            </h3>
+                {% for place in places %}
+                    <div id="tab-{{ place.day }}" class="tab-pane fade {% if loop.first %} in active {% endif %}">
+                        <div class="row day">
+                            <div class="col-xs-12">
+                                <h3>
+                                    {{ place.day }}
+                                </h3>
+                            </div>
                         </div>
+                        <form action="/admin/place/edit" method="POST">
+                            <input type="hidden" name="id" value="{{ place.id }}"/>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <span class="hour">12h-14h :</span>
+                                    <div class="form-group">
+                                        <label for="{{ place.day }}-adress-12">Adresse</label>
+                                        <input class="form-control" type="text" id="{{ place.day }}-adress-12"
+                                               name="adress-12" value="{{ place.adress_day }}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="{{ place.day }}-coord-12">Coordonnées</label>
+                                        <input class="form-control" type="text" id="{{ place.day }}-coord-12"
+                                               name="coord-12" value="{{ place.coord_day }}"
+                                               pattern="-?[0-9]+.[0-9]+,\s?-?[0-9]+.[0-9]+" placeholder="1.23456789, 1.23456789" title="Veuillez entrer des coordonées valides"/>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <span class="hour">19h-21h :</span>
+                                    <div class="form-group">
+                                        <label for="{{ place.day }}-adress-19">Adresse</label>
+                                        <input class="form-control" type="text" id="{{ place.day }}-adress-19"
+                                               name="adress-19" value="{{ place.adress_evening }}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="{{ place.day }}-coord-19">Coordonnées</label>
+                                        <input class="form-control" type="text" id="{{ place.day }}-coord-19"
+                                               name="coord-19" value="{{ place.coord_evening }}"
+                                               pattern="-?[0-9]+.[0-9]+,\s?-?[0-9]+.[0-9]+" placeholder="1.23456789, 1.23456789" title="Veuillez entrer des coordonées valides"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 text-center">
+                                    <input type="submit" value="Valider" class="btn btn-primary">
                     </div>
                     <form action="/admin/place/edit" method="POST">
                         <input type="hidden" name="id" value="{{ place.id }}"/>
@@ -25,40 +60,40 @@
                                 <span class="hour">12h-14h :</span>
                                 <div class="form-group">
                                     <label for="{{ place.day }}-adress-12">Adresse</label>
-                                     <input class="form-control" type="text" id="{{ place.day }}-adress-12"
+                                     <input class="form-control" type="text" id="{{ place.day }}-12-adress"
                                             name="adress-12" value="{{ place.adress_day }}"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="{{ place.day }}-coord-12">Coordonnées</label>
-                                    <input class="form-control" type="text" id="{{ place.day }}-coord-12"
+                                    <input class="form-control" type="text" id="{{ place.day }}-12-coord"
                                            name="coord-12" value="{{ place.coord_day }}"
                                            pattern="-?[0-9]+.[0-9]+,\s?-?[0-9]+.[0-9]+" placeholder="1.23456789, 1.23456789" title="Veuillez entrer des coordonées valides"/>
+                                    <button class="form-control coordinates-generator" id="{{ place.day }}-12-button" type="button">Calculer les coordonées</button>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6">
                                 <span class="hour">19h-21h :</span>
                                 <div class="form-group">
                                     <label for="{{ place.day }}-adress-19">Adresse</label>
-                                    <input class="form-control" type="text" id="{{ place.day }}-adress-19"
+                                    <input class="form-control" type="text" id="{{ place.day }}-19-adress"
                                            name="adress-19" value="{{ place.adress_evening }}"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="{{ place.day }}-coord-19">Coordonnées</label>
-                                    <input class="form-control" type="text" id="{{ place.day }}-coord-19"
+                                    <input class="form-control" type="text" id="{{ place.day }}-19-coord"
                                            name="coord-19" value="{{ place.coord_evening }}"
                                            pattern="-?[0-9]+.[0-9]+,\s?-?[0-9]+.[0-9]+" placeholder="1.23456789, 1.23456789" title="Veuillez entrer des coordonées valides"/>
+                                    <button class="form-control coordinates-generator" id="{{ place.day }}-19-button" type="button">Calculer les coordonées</button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 text-center">
-                                <input type="submit" value="Valider" class="btn btn-primary">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            {% endfor %}
+                        </form>
+                    </div>
+                {% endfor %}
             </div>
         </section>
     </div>
+{% endblock %}
+{% block javascript %}
+    {{ parent()}}
+    <script src="/assets/js/place.js"></script>
 {% endblock %}
