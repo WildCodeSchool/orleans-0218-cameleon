@@ -1,22 +1,32 @@
 <section class="team container-fluid" id="team">
     <div class="container">
+        <h2 class="visible-xs">Notre équipe</h2>
         <div class="row">
-            <div class="text-center col-xs-12">
-                <h2>L'équipe</h2>
+            <div class="col-sm-4 perso">
+                <div class="row">
+                    <img class="img-responsive img-circle" src="{{ team[0].picture }}" alt="{{ team[0].name }}">
+                </div>
+                <div class="row">
+                    <h4>{{ team[0].name }}</h4>
+                </div>
+                <div class="row">
+                    <p>{{ team[0].description }}</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <h2 class="hidden-xs">Notre équipe</h2>
+            </div>
+            <div class="col-sm-4 perso">
+                <div class="row">
+                    <img class="img-responsive img-circle" src="{{ team[1].picture }}" alt="{{ team[1].name }}">
+                </div>
+                <div class="row">
+                    <h4>{{ team[1].name }}</h4>
+                </div>
+                <div class="row">
+                    <p>{{ team[1].description }}</p>
+                </div>
             </div>
         </div>
-        {% for teamMate in team %}
-            <div class="row">
-                <div class="col-xs-12 col-sm-3 img-container {{ loop.index is not odd ? 'col-sm-push-9' }}">
-                    <img class="img-responsive img-circle" src="{{ teamMate.picture }}" alt="{{ teamMate.name }}">
-                </div>
-                <div class="col-xs-12 col-sm-9 description-container {{ loop.index is not odd ? 'col-sm-pull-3' }}">
-                    <div>
-                        <h3 class="{{ loop.index is not odd ? 'text-right' }}">{{ teamMate.name }}</h3>
-                        <p class="{{ loop.index is not odd ? 'text-right' }}">{{ teamMate.description }}</p>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
     </div>
 </section>

@@ -1,11 +1,19 @@
 <section id="spotlight">
     <div class="container">
-        <h2 class="title_spotlight">En Lumière</h2>
-        <div class="text-center col-sm-12 col-md-6">
-            <img class="img_spotlight img-responsive" src="{{spotlight.photo}}" alt="{{spotlight.alt}}"/>
-        </div>
-        <div class="text_spotlight text-center col-sm-12 col-md-6">                    
-            <p>{{spotlight.text|raw}}</p>
+        <h2 class="title_spotlight visible-xs">Les news du camion</h2>
+        <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <img class="img_spotlight img-responsive"
+                     src="{{spotlight.photo}}" alt="{{spotlight.alt}}"/>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div class="row">
+                    <h2 class="title_spotlight hidden-xs">Les news du camion</h2>
+                </div>
+                <div class="row text_spotlight">
+                    <p>{{spotlight.text|raw}}</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>

@@ -1,16 +1,47 @@
-h2 {
-    color: #ee7722;
+h3 {
+    font-family: nexarust;
+    color: #728e20;
+    font-size: 3.5rem;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+}
+.prevention {
+    font-family: nexa;
+    font-size: 2.5rem;
+    text-align: center;
+    padding-bottom: 2vh;
 }
 p {
     font-family: "Open Sans";
+    font-size: 2rem;
 }
-h3 {
-    color: #728e20;
+h4 {
+    color: #ee7722;
+    font-weight: bold;
+    font-size: 2.5rem;
 }
-
+h2 {
+    text-align: center;
+    font-family: nexa;
+    color: #ee7722;
+    font-size: 4.5rem;
+    background-image: url("../images/banderole3.png");
+    background-position: center top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 150px;
+    padding-top: 90px;
+}
+body {
+    background-image: url("../images/grey_background.jpg");
+}
 @media screen and (max-width: 500px) {
     h2 {
         font-size: 2.3em;
+        background-image: unset;
+        transform: rotate(0deg);
+        height: 50px;
+        padding-top: unset;
     }
     h3 {
         font-size: 1.7em;
@@ -26,8 +57,9 @@ h3 {
 
 }
 .price {
-    padding-top: 2rem;
+    padding-top: 1rem;
     margin: 0;
+    font-weight: bold;
 }
 .ingredients {
     font-style: italic;

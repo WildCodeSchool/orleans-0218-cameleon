@@ -6,7 +6,10 @@
 }
 
 .gallery-page a img:hover{
-    border: 1px solid green;
+
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    cursor: pointer;
 }
 
 .gallery-page .modal img {
@@ -20,4 +23,31 @@
 
 .gallery-page img.image-responsive {
     margin: 1px;
+}
+.gallery-page h2 {
+    text-align: center;
+    font-family: nexa;
+    color: #ee7722;
+    font-size: 4.2rem;
+    background-image: url("../images/banderole2.png");
+    background-position: center top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 150px;
+    padding-top: 50px;
+    transform: rotate(7deg);
+    margin-top: 0;
+    margin-bottom: 5vh;
+}
+@media screen and (max-width: 500px) {
+    .gallery-page h2 {
+        background-image: unset;
+        transform: rotate(0deg);
+        height: 50px;
+        padding-top: unset;
+    }
+}
+
+.gallery-page {
+    background-image: url("../images/grey_background.jpg");
 }

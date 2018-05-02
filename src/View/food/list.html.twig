@@ -5,8 +5,8 @@
     <link rel="stylesheet" media="screen"  href="assets/css/food.css">
 {% endblock %}
 {% block content %}
-    <div class="container">
-        <h2 class="text-center">Notre carte</h2>
+    <div class="container food">
+        <h2>Notre carte</h2>
         {% for category, foods in foodCategories %}
             <div class="row">
                 <div class="col-sm-12 menu">
@@ -30,4 +30,5 @@
             </div>
         {% endfor %}
     </div>
+    <p class="prevention">La carte evolue au fils des voyages et des envies du chef</p>
 {% endblock %}

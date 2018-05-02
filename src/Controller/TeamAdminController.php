@@ -28,7 +28,6 @@ class TeamAdminController extends AbstractController
     }
     public function edit()
     {
-        session_start();
         $teamManager = new TeamManager();
         $notification = new Notification();
         $directory ='team';

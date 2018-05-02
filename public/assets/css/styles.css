@@ -1,19 +1,18 @@
+/* GLOBAL */
 
-.title_concept {
-    text-align: center;
-}
-
-.text_concept {
-    text-align: center;
+@font-face {
+    font-family: nexa;
+    src: url(../fonts/NexaRustScriptL-0.otf);
 }
 
 @font-face {
-    font-family: plaza;
-    src: url(../fonts/29849_PlazaITC-Normal.ttf);
-    font-weight: normal;
-    font-style: normal;
+    font-family: nexarust;
+    src: url("../fonts/NexaRustSlab-BlackShadow01.otf");
 }
-
+@font-face {
+    font-family: peax;
+    src: url("../fonts/PeaxWebdesignarrows.ttf");
+}
 body {
     background-color: #F3F3F3;
     font-family: "Open Sans";
@@ -22,8 +21,8 @@ body {
 }
 
 section{
-    padding-top:50px;
-    padding-bottom:50px;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
 }
 
 a {
@@ -34,153 +33,14 @@ a:hover {
     color: #333;
 }
 
-h1 {
-    color: #728e20;
-    font-size: 3em;
-    font-family: plaza;
-}
-
-h1:after, h1:before {
-    content: "\e044";
-    font-family: 'Glyphicons Halflings';
-    display: inline-block;
-    padding-top: 5px;
-}
-
-h1:after {
-    transform: rotate(-90deg);
-    padding-right: 18px;
-}
-
-h1:before {
-    transform: rotate(90deg);
-    padding-left: 13px;
-}
-
-h2 {
-    color: #ee7722;
-    font-size: 3em;
-    font-family: plaza;
-    letter-spacing: 0.3vw;
-}
-
-h2:after, h2:before {
-    color: #ee7722;
-    font-family: 'Glyphicons Halflings';
-    font-size: 0.8em;
-    display: inline-block;
-    padding-top: 3px;
-    letter-spacing: -10px;
-
-}
-
-h2:after {
-    padding-left: 10px;
-    content: "\e079\e079\e079\e079\e079";
-    background: linear-gradient(to right, rgba(238, 119, 34, 1), rgba(238, 119, 34, 0));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-h2:before {
-    padding-right: 20px;
-    content: "\e080\e080\e080\e080\e080";
-    background: linear-gradient(to left, rgba(238, 119, 34, 1), rgba(238, 119, 34, 0));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-h3 {
-    color: #728e20;
-    font-size: 2em;
-    font-family: plaza;
-}
-
 .container {
     margin-bottom: 20px;
-}
-
-.menu h3:after, .menu h3:before, .day h3:before, .day h3:after {
-    content: "\e044";
-    font-family: 'Glyphicons Halflings';
-    display: inline-block;
-    padding-top: 5px;
-}
-
-.menu h3:after, .day h3:after {
-    transform: rotate(-90deg);
-    padding-right: 16px;
-}
-
-.menu h3:before, .day h3:before {
-    transform: rotate(90deg);
-    padding-left: 8px;
-}
-
-h4 {
-    color: #000;
-    font-size: 1.7em;
-    font-family: plaza;
-}
-
-section:nth-child(odd) {
-    background-color: #F3F3F3;
-    color: black;
-}
-
-section:nth-child(even) {
-    background-color: #FCFCFC;
-    color: black;
-}
-
-/*spotlight*/
-
-.title_spotlight {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.img_spotlight {
-    margin-right: 15px;
-    margin-top: 20px;
-}
-
-.text_spotlight {
-    margin-top: auto;
-    margin-bottom: auto;
-    padding-top: 15px;
-    text-align: left;
-}
-
-#spotlight {
-    margin-bottom: 25px;
-}
-
-.admin-menu .nav-tabs > li.active > a {
-    background-color: #EEE;
-    color: #333;
-}
-
-.section-admin {
-    padding-top: 10px;
-    Padding-bottom: 10px;
-}
-
-label {
-    font-size: 20px;
-}
-
-.notification {
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
 }
 
 /* alert */
 .alert-message, .alert-danger {
     color: white;
-    font-size: 1.5em;
+    font-size: 2rem;
     background-color: #ee7722;
     padding: 0;
     margin: 0;
@@ -188,25 +48,106 @@ label {
 
 .alert-success {
     color: white;
-    font-size: 1.5em;
+    font-size: 2rem;
     background-color: #728e20;
     padding: 0;
     margin: 0;
 }
 
+/* slider */
+.slider-indicator {
+    font-family: "peax", fantasy;
+    font-size: 6rem;
+    color: #647c1c;
+
+}
+
+.carousel {
+    line-height: 400px;
+}
+
+.imgs-slider {
+    object-fit: cover;
+    max-height: 400px;
+    min-height: 400px;
+    width: 100%;
+}
+.img-slider {
+    object-fit: cover;
+    height: 300px;
+}
+.slider {
+    padding: 0;
+}
+
+/* concept */
+
+.title_concept {
+    text-align: center;
+    font-family: nexa;
+    color: #ee7722;
+    font-size: 4.2rem;
+    background-image: url("../images/banderole2.png");
+    background-position: center top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 150px;
+    padding-top: 50px;
+    margin-bottom: 30px;
+    transform: rotate(7deg);
+    margin-top: 0;
+}
+@media screen and (max-width: 500px) {
+    .title_concept {
+        background-image: unset;
+        transform: rotate(0deg);
+        height: 50px;
+        padding-top: unset;
+    }
+}
+.text_concept {
+    background-color: transparent;
+    text-align: center;
+    background-image: url("../images/line_background.png"), url("../images/line_background2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left, right;
+    padding: 0 10vw;
+    font-size: 2rem;
+}
+
+/*spotlight*/
+
+.title_spotlight {
+    text-align: center;
+    margin-top: 20px;
+    font-family: nexarust;
+    color: #ee7722;
+}
+
+.text_spotlight {
+    margin-left: 2vh;
+}
+
+#spotlight {
+    margin-bottom: 25px;
+    background-image: url("../images/grey_background.jpg");
+    background-size: cover;
+}
+
 /* team */
 
-.team {
-    padding-bottom: 20px;
+.perso h4 {
+    font-size: 3rem;
+    text-align: center;
+    color: #ee7722;
+    font-family: nexa;
 }
 
-.team .img-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.perso img {
+    margin: auto;
+    padding: auto;
 }
-
 .team img {
     max-height: 200px;
     object-fit: cover;
@@ -219,11 +160,27 @@ label {
     align-items: center;
 }
 
-.team h3 {
-    margin: 0px;
-    color: #728e20;
+.team h2 {
+    text-align: center;
+    font-family: nexa;
+    color: #ee7722;
+    font-size: 4.2rem;
+    background-image: url("../images/banderole2.png");
+    background-position: center top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 150px;
+    padding-top: 50px;
+    transform: rotate(7deg);
 }
-
+@media screen and (max-width: 500px) {
+    .team h2 {
+        background-image: unset;
+        transform: rotate(0deg);
+        height: 50px;
+        padding-top: unset;
+    }
+}
 .team center-team {
     display: flex;
     flex-direction: row;
@@ -232,28 +189,6 @@ label {
 }
 
 @media screen and (max-width: 766px) {
-    .team h3 {
-        text-align: center;
-    }
-
-    .team p {
-        text-align: center;
-    }
-
-    h2 {
-        color: #ee7722;
-        font-size: 3em;
-        font-family: plaza;
-        letter-spacing: 0vw;
-    }
-
-    h2:after {
-        content: "\e079";
-    }
-
-    h2:before {
-        content: "\e080";
-    }
 
     .alert-message {
         color: white;
@@ -268,12 +203,11 @@ label {
     }
 }
 
-.slider {
-    padding: 0;
-}
-
 /* Gallery */
 
+.gallery {
+    background-image: url("../images/grey_background.jpg");
+}
 .gallery a img {
     height: 220px;
     width: 100%;
@@ -282,7 +216,9 @@ label {
 }
 
 .gallery a img:hover {
-    border: 1px solid green;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    cursor: pointer;
 }
 
 .gallery .modal img {
@@ -303,46 +239,21 @@ label {
 }
 
 .gallery .button-container a {
-    background-color: #aed135;
-    font-size: 1em;
+    background-color: #728e20;
+    font-size: 2rem;
     color: white;
     width: 250px;
     height: 50px;
-    margin-top: 12px;
+    margin-top: 15px;
+    padding-top: 10px;
+    box-shadow: 3px 3px 3px #787373;
 }
 
 .gallery .button-container a:hover {
     background-color: #ee7722;
 }
-
-/*admin*/
-.admin-footer {
-    background-color: transparent;
-}
-
-.title_admin_comp {
+.gallery h2 {
+    font-family: nexarust, sans-serif;
+    font-size: 4rem;
     color: #728e20;
-    font-size: 1em;
-    font-family: plaza;
 }
-
-#mentions_legales {
-    max-height: 50px;
-}
-
-/* slider */
-.imgs-slider {
-    object-fit: cover;
-    max-height: 400px;
-    min-height: 400px;
-    width: 100%;
-}
-
-/*team admin*/
-.img-slider {
-    object-fit: cover;
-    max-height: 250px;
-    min-height: 250px;
-    width: 100%;
-}
-

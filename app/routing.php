@@ -64,7 +64,6 @@ $routes = [
         ['edit', '/admin/team/edit', 'POST'],
         ['edit', '/admin/team/edit', 'GET'],
     ],
-
     'GalleryAdmin' => [
         ['index', '/admin/gallery', 'GET'],
         ['insert', '/admin/gallery/insert', 'POST'],

@@ -1,10 +1,64 @@
+
+
+section {
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    font-size: 0.7em;
+}
+
+label {
+    font-size: 0.7em;
+}
+
+th {
+    font-size: 0.7em;
+}
+
+td p {
+    font-size: 0.7em;
+}
+
+.panel-theme {
+    border-color: #aed135;
+}
+
+.panel-theme>.panel-heading {
+    background-color: #aed135;
+    border-color: #aed135;
+    color: white;
+}
+
+/*header*/
+
+input #alert.form-control {
+    min-width: 100%;
+}
+
+.header-admin button {
+    margin: auto;
+    padding: auto;
+}
+
+.header-admin img {
+    height: 50px;
+    width: 80px;
+    object-fit: cover;
+}
+
+.header-admin .description {
+    min-width: 80%;
+    width: 100%;
+}
+
+/*gallery*/
+
 .gallery-admin img {
     height: 50px;
     width: 80px;
-}
-
-.gallery-admin label {
-    font-size: 0.8em;
+    object-fit: cover;
 }
 
 .gallery-admin h3 {
@@ -12,23 +66,83 @@
     margin-bottom: 25px;
 }
 .gallery-admin label {
-    font-size: 0.6em;
-}
-
-.gallery-admin .jumbotron {
-    background-color: white;
-    padding-bottom: 35px;
-    padding-top: 30px;
+    font-size: 0.7em;
 }
 
 .gallery-admin th {
     font-size: 0.7em;
-    padding-right: 25px;
-    padding-left: 15px;
+}
+
+.gallery-admin input {
+    font-size: 0.7em;
+}
+
+.gallery-admin .description {
+    min-width: 80%;
+    width: 100%;
+}
+
+.gallery-admin td p {
+    font-size: 0.7em;
 }
 
 @-moz-document url-prefix() {
-    .gallery-admin .form-control {
-        height: auto;
+    .form-control {
+        height: inherit;
     }
+}
+
+.admin-menu .nav-tabs > li.active > a {
+    background-color: #EEE;
+    color: #333;
+}
+
+.section-admin {
+    padding-top: 10px;
+    Padding-bottom: 10px;
+}
+
+label {
+    font-size: 20px;
+}
+
+.notification {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+
+/*admin*/
+.admin-footer {
+    background-color: transparent;
+}
+
+.title_admin_comp {
+    color: #728e20;
+    font-size: 1em;
+    font-family: plaza;
+}
+
+#mentions_legales {
+    max-height: 50px;
+}
+
+/*team admin*/
+.img-slider {
+    object-fit: cover;
+    max-height: 250px;
+    min-height: 250px;
+    width: 100%;
+}
+
+.panel-theme {
+    border-color: #aed135;
+}
+
+.panel-theme>.panel-heading {
+    background-color: #aed135;
+    border-color: #aed135;
+    color: white;
 }

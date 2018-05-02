@@ -1,6 +1,5 @@
 .hour{
     font-weight: bold;
-    margin-left:10px;
 }
 
 .places-map{
@@ -8,16 +7,48 @@
     margin-bottom:50px;
     margin-top:40px;
 }
-
+body {
+    background-image: url("../images/grey_background.jpg");
+}
 h3{
     color:#728e20;
-    margin-top:5px;
+    margin-top: 4rem;
+    font-family: nexarust;
 }
-
+.disponible {
+    font-family: nexa;
+    font-size: 2.5rem;
+    text-align: center;
+    padding-top: 5vh;
+}
 .marker{
     font-size:0.9em;
 }
 
 .hour{
     font-size:0.9em;
+}
+.glyphicon-map-marker {
+    color: #ee7722;
+}
+h2 {
+    text-align: center;
+    font-family: nexa;
+    color: #ee7722;
+    font-size: 4.5rem;
+    background-image: url("../images/banderole3.png");
+    background-position: center top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 150px;
+    padding-top: 90px;
+}
+
+@media screen and (max-width: 500px) {
+    h2 {
+        background-image: unset;
+        transform: rotate(0deg);
+        height: 50px;
+        padding-top: unset;
+    }
 }

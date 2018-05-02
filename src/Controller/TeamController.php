@@ -24,7 +24,6 @@ class TeamController extends AbstractController
     {
         $teamManager = new TeamManager();
         $teams = $teamManager->selectAll();
-
         return $this->twig->render('admin/team.html.twig');
     }
 }

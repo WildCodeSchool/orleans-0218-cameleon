@@ -1,11 +1,11 @@
 <!--Footer-->
 <footer class="font-small container-fluid ">
-    <div class=" row ">
+    <div class=" row footer-row">
         <!--Footer Links-->
-        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 small  listlink">
+        <div class="col-xs-5 col-sm-4 col-md-4 col-lg-4 small  listlink">
             <ul class="list-unstyled">
                 <li>
-                    <a href="#!">Notre carte</a>
+                    <a href="/menu">Notre carte</a>
                 </li>
                 <li>
                     <a href="/lieux">Où nous trouver</a>
@@ -23,38 +23,60 @@
         </div>
         <!--End the Footer Links-->
 
-        <div class="col-xs-6 col-xs-offset-1 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-0 col-lg-4 col-lg-offset-0">
+        <div class="col-xs-6 col-sm-3">
 
             <!--Sociale Media-->
             <div class="icons">
                 <ul class=" list-inline ">
                     <li class="list-inline-item">
                         <a href="{{ company.facebook }}">
-                            <i><img src="assets/images/facebook.png"></i>
+                            <img src="assets/images/facebook.png" alt="facebook">
                         </a>
                     </li>
                     <li class="list-inline-item ">
                         <a href="{{ company.tweeter }}">
-                            <i> <img src="assets/images/twitter.png"></i>
+                            <img src="assets/images/twitter.png" alt="twitter">
                         </a>
                     </li>
                     <li class="list-inline-item">
                         <a href="{{ company.instagram }}">
-                            <i><img src="assets/images/instagram.png"></i>
+                            <img src="assets/images/instagram.png" alt="instagram">
                         </a>
                     </li>
                 </ul>
                 <!--End of the sociale midia-->
                 <!--Footer Telephone-->
                 <div class="phone">
-                    <p class=" mx-0 ">Mentions légales</p>
+
+                    <a  class="link_mentions" href="modal" data-toggle="modal" data-target="#myModal">
+                        Mentions légales
+                    </a>
+
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Mentions légales</h4>
+                                </div>
+                                <div class="modal-body">
+                                    {{ company.mentions_legales }}
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <p class=" mx-0 "> {{ company.phone }} </p>
                 </div>
                 <!--End off the Footer Telephone-->
             </div>
         </div>
         <!--facebook-->
-        <div class="fb-page hidden-xs hidden-sm  col-md-4 col-lg-4 face"
+        <div class="fb-page hidden-xs hidden-sm col-md-4 col-lg-4 face"
              data-href="https://www.facebook.com/lecameleonvoyageur/"
              data-tabs="timeline" data-height="335" data-small-header="true" data-adapt-container-width="false"
              data-hide-cover="false"

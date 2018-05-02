@@ -1,24 +1,26 @@
 /* Navbar */
 
 .navbar-fixed-top {
-    background-color: #aed135;
+    background-color: white;
     height: 70px;
 }
 
 .navbar-default {
     border: 0;
 }
-
+.navbar-default .navbar-nav > li {
+    background-color: white;
+}
 .navbar-default .navbar-collapse {
-    background-color: #aed135;
     border: 0;
 }
 
 .navbar-default .navbar-nav>li>a {
-    font-size: 2.5rem;
-    color: #FFF;
-    line-height: 150%;
-    font-family: "plaza", "Open Sans";
+    font-size: 2rem;
+    color: black;
+    line-height: 200%;
+    font-family: "Open Sans";
+    margin-right: 1vw;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
@@ -42,9 +44,9 @@
 
 .cameleon {
     font-size: 3rem;
-    color: #FFF;
+    color:#728e20;
     margin: auto;
-    font-family: "plaza", "Open Sans";
+    font-family: "nexa";
     height: inherit;
     margin-left: 1vw;
 }
@@ -55,9 +57,7 @@
 
 @media screen and (max-width: 425px) {
     .cameleon {
-        font-size: 2rem;
-        margin-left: 5vw;
-
+        font-size: 2.2rem;
     }
 }
 

@@ -8,7 +8,7 @@
 {% endblock %}
 {% block content %}
     {{ parent() }}
-    <div class="container">
+    <div class="container place">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
                 <h2>Où nous trouver?</h2>
@@ -24,19 +24,20 @@
                             </h3>
                         </div>
                         <div>
-                            <span class="hour"><span class="glyphicon glyphicon-map-marker"></span>12h-14h :</span>
+                            <span class="hour"><span class="glyphicon glyphicon-map-marker"></span> midi :</span>
                             <span id="{{ place.day }}_12h-14h" data="{{ place.coord_day }}" class="marker">
                                 {{ place.adress_day ? place.adress_day : 'Le foodtruck n\'est pas disponible' }}
                             </span>
                         </div>
                         <div>
-                            <span class="hour"><span class="glyphicon glyphicon-map-marker"></span>19h-21h :</span>
+                            <span class="hour"><span class="glyphicon glyphicon-map-marker"></span> soir :</span>
                             <span id="{{ place.day }}_19h-21h" data="{{ place.coord_evening }}" class="marker">
                                   {{ place.adress_evening ? place.adress_evening : 'Le foodtruck n\'est pas disponible' }}
                             </span>
                         </div>
                     {% endif %}
                 {% endfor %}
+                <p class="disponible">Le cameleon est disponible le midi de 12h à 14h et le soir de 19h à 21h</p>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <div id="map" class="places-map"></div>
