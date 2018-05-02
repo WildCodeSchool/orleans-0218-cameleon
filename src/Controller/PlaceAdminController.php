@@ -28,7 +28,7 @@ class PlaceAdminController extends AbstractController
         $placeManager = new PlaceManager();
         $infos = $placeManager->selectAll();
         return $this->twig->render('admin/place.html.twig',
-            ['places'=>$infos,'notification'=>$notification]);
+            ['places' => $infos, 'notification' => $notification]);
     }
 
     public function edit()
@@ -42,15 +42,15 @@ class PlaceAdminController extends AbstractController
             $notification = new Notification();
             $notification->setNotification('success', 'L\'enregistrement s\'est bien déroulé');
             try {
-                 if ((preg_match('/-?[0-9]+.[0-9]+,\s?-?[0-9]+.[0-9]+/', $cleanPost['coord-12'])
-                    ||$cleanPost['coord-12'] == null )&&
-                (preg_match('/-?[0-9]+.[0-9]+,\s?-?[0-9]+.[0-9]+/', $cleanPost['coord-19'])
-                    ||$cleanPost['coord-19'] == null )) {
+                if ((preg_match('/-?[0-9]+.[0-9]+,\s?-?[0-9]+.[0-9]+/', $cleanPost['coord-12'])
+                        || $cleanPost['coord-12'] == null) &&
+                    (preg_match('/-?[0-9]+.[0-9]+,\s?-?[0-9]+.[0-9]+/', $cleanPost['coord-19'])
+                        || $cleanPost['coord-19'] == null)) {
                     $placeManager->update($cleanPost['id'], [
-                        'adress_day'=>$cleanPost['adress-12'],
-                        'coord_day'=>$cleanPost['coord-12'],
-                        'adress_evening'=>$cleanPost['adress-19'],
-                        'coord_evening'=>$cleanPost['coord-19'],
+                        'adress_day' => $cleanPost['adress-12'],
+                        'coord_day' => $cleanPost['coord-12'],
+                        'adress_evening' => $cleanPost['adress-19'],
+                        'coord_evening' => $cleanPost['coord-19'],
                     ]);
                 } else {
                     throw new \Exception('Les coordonnées en sont pas valides.');

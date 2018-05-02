@@ -2,86 +2,88 @@
 {% block content %}
     <div class="container">
         <section id="menu">
-            <div class="row">
-                <div class="col-xs-3">
-                    <h3>Produits</h3>
-                </div>
-            </div>
+            <h3 class="text-center">La carte</h3>
+            <div class="panel panel-theme">
+                <div class="panel-heading">Produits</div>
+                <div class="panel-body">
 
-            <table class="table table-striped table-hover">
-                <thead>
-                <tr>
-                    <th>Catégorie</th>
-                    <th>Produits</th>
-                    <th>Prix</th>
-                    <th>Ingredients</th>
-                    <th>
-                        <a type="button" class="btn btn-success" href="/admin/menu/showNewProduct">Nouveau</a>
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for category in foodCategories %}
-                    {% for food in category.produits if food.category != null %}
+
+                    <table class="table table-striped table-hover">
+                        <thead>
                         <tr>
-                            <td>{{ food.categoryName }}</td>
-                            <td>{{ food.foodName }}</td>
-                            <td>{{ food.price }}€</td>
-                            <td>{{ food.ingredients }}</td>
-                            <td>
-                                <a href="/admin/menu/showProduct/{{ food.foodId }}"
-                                   type="submit"
-                                   class="btn btn-primary">Modifier
-                                </a>
-                            </td>
-                            <td>
-                                <form action="/admin/menu/deleteProduct" method="post">
-                                    <input type="hidden" name="id" value="{{ food.foodId }}">
-                                    <input type="submit" class="btn btn-danger" value="Supprimer">
-                                </form>
-                            </td>
+                            <th>Catégorie</th>
+                            <th>Produits</th>
+                            <th>Prix</th>
+                            <th>Ingredients</th>
+                            <th>
+                                <a type="button" class="btn btn-success" href="/admin/menu/showNewProduct">Nouveau</a>
+                            </th>
                         </tr>
-                    {% endfor %}
-                {% endfor %}
-                </tbody>
-            </table>
-            <div class="row">
-                <div class="col-xs-3">
-                    <h3>Categories</h3>
+                        </thead>
+                        <tbody>
+                        {% for category in foodCategories %}
+                            {% for food in category.produits if food.category != null %}
+                                <tr>
+                                    <td>{{ food.categoryName }}</td>
+                                    <td>{{ food.foodName }}</td>
+                                    <td>{{ food.price }}€</td>
+                                    <td>{{ food.ingredients }}</td>
+                                    <td>
+                                        <a href="/admin/menu/showProduct/{{ food.foodId }}"
+                                           type="submit"
+                                           class="btn btn-primary">Modifier
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <form action="/admin/menu/deleteProduct" method="post">
+                                            <input type="hidden" name="id" value="{{ food.foodId }}">
+                                            <input type="submit" class="btn btn-danger" value="Supprimer">
+                                        </form>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
             </div>
+            <div class="panel panel-theme">
+                <div class="panel-heading">Catégories</div>
+                <div class="panel-body">
 
+                    <table class="table table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>Catégories</th>
+                            <th><a href="/admin/menu/showNewCategory" type="button" class="btn btn-success">Nouveau</a>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for key,category in foodCategories %}
+                            <tr>
+                                <td>{{ category.name }}</td>
+                                <td>
+                                    <a href="/admin/menu/showCategory/{{ key }}" type="button" class="btn btn-primary">Modifier</a>
+                                </td>
+                                <td>
+                                    <form action="/admin/menu/deleteCategory" method="post">
+                                        <input type="hidden" name="id" value="{{ key }}">
+                                        <input type="submit" class="btn btn-danger" value="Supprimer"
+                                                {% for food in category.produits if food.category != null %}
+                                                    disabled="disabled"
+                                                    title="Une catégorie doit être vide pour être supprimée"
+                                                {% endfor %}
+                                        >
 
-            <table class="table table-striped table-hover">
-                <thead>
-                <tr>
-                    <th>Catégories</th>
-                    <th><a href="/admin/menu/showNewCategory" type="button" class="btn btn-primary">Nouveau</a></th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for key,category in foodCategories %}
-                    <tr>
-                        <td>{{ category.name }}</td>
-                        <td>
-                                <a href="/admin/menu/showNewCategory" type="button" class="btn btn-success">Modifier</a>
-                        </td>
-                        <td>
-                            <form action="/admin/menu/deleteCategory" method="post">
-                                <input type="hidden" name="id" value="{{ key }}">
-                                <input type="submit" class="btn btn-danger" value="Supprimer"
-                                        {% for food in category.produits if food.category != null %}
-                                            disabled="disabled"
-                                            title="Une catégorie doit être vide pour être supprimée"
-                                        {% endfor %}
-                                >
-
-                            </form>
-                        </td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </section>
     </div>
 {% endblock %}

@@ -61,6 +61,6 @@ class Notification
 
     public function setNotification($type, $message)
     {
-        $this->session->set('notification', ['type'=>$type, 'message'=>$message]);
+        $this->session->set('notification', ['type' => $type, 'message' => $message]);
     }
 }

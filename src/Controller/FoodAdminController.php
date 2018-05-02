@@ -27,7 +27,8 @@ class FoodAdminController extends AbstractController
             $foodCategories[$food['categoryId']]['name'] = $food['categoryName'];
             $foodCategories[$food['categoryId']]['produits'][] = $food;
         }
-        return $this->twig->render('admin/food.html.twig', ['foodCategories' => $foodCategories, 'notification' => $notification]);
+        return $this->twig->render('admin/food.html.twig', ['foodCategories' => $foodCategories,
+            'notification' => $notification]);
     }
 
     public function showProduct(int $id)
@@ -158,7 +159,7 @@ class FoodAdminController extends AbstractController
                     OR empty($cleanPost['category'])) {
                     throw new \Exception('Les champs obligatoires doivent être remplis');
                 }
-                $productManager->insert( [
+                $productManager->insert([
                     'name' => $cleanPost['name'],
                     'price' => $cleanPost['price'],
                     'ingredients' => $cleanPost['ingredients'],
@@ -194,7 +195,7 @@ class FoodAdminController extends AbstractController
                 if (empty($cleanPost['name'])) {
                     throw new \Exception('Le nom de la catégorie ne peut pas être vide');
                 }
-                $categoryManager->insert( [
+                $categoryManager->insert([
                     'name' => $cleanPost['name'],
                 ]);
             } catch (\Exception $e) {

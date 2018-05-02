@@ -1,59 +1,28 @@
 {% block body %}
-<div data-spy="scroll" data-target="#myScrollspy" data-offset="12" class="scrollspy">
-    <div class="container-fluid">
-        <div class="row">
-            <nav id="myScrollspy" class="navbar navbar-default navbar-fixed-top">
+    <div class="scrollspy">
+        <nav id="myScrollspy" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
                 <div class="navbar-header">
-
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"><span class="sr-only">Toggle navigation</span>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"
+                            aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-
                     </button>
-
-                    <a href="/" class="navbar-brand"><img src="assets/images/logo_cameleon.png" class="logo img-responsive" ><span class="cameleon">Le cameleon voyageur</span></a>
-
+                    <a href="/" class="navbar-brand"><img src="assets/images/logo_cameleon.png"
+                                                          class="logo img-responsive" alt="logo"><span class="cameleon">Le cameleon voyageur</span></a>
                 </div>
-
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav navbar-right">
-
-                        <li>
-                            <a data-toggle="collapse" data-target=".navbar-collapse" href="/menu">
-                                Notre carte
-                            </a>
-                        </li>
-
-                        <li>
-                            <a data-toggle="collapse" data-target=".navbar-collapse" href="/lieux">
-                                Où nous trouver
-                            </a>
-                        </li>
-
-                        <li>
-                            <a data-toggle="collapse" data-target=".navbar-collapse" href="/#concept">
-                                Le concept
-                            </a>
-                        </li>
-
-                        <li>
-                            <a data-toggle="collapse" data-target=".navbar-collapse" href="/#team">
-                                L'équipe
-                            </a>
-                        </li>
-
-                        <li>
-                            <a data-toggle="collapse" data-target=".navbar-collapse" href="/gallery">
-                                La galerie
-                            </a>
-                        </li>
-
+                        <li><a href="/#concept">Le concept</a></li>
+                        <li><a href="/#team">L'équipe</a></li>
+                        <li><a href="/gallery">La galerie</a></li>
+                        <li><a href="/menu">Notre carte</a></li>
+                        <li><a href="/lieux">Où nous trouver</a></li>
                     </ul>
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
     </div>
-</div>
-
 {% endblock %}

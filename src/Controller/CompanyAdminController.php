@@ -48,6 +48,7 @@ class CompanyAdminController extends AbstractController
             } elseif (filter_var($cleanPost['instagram'], FILTER_VALIDATE_URL) == false) {
                 $notification->setNotification('danger', 'L\'URL d\'instagram n\'est pas valide');
             } else {
+                $notification->setNotification('success', 'L\'enregistrement s\'est bien déroulé');
                 $companyManager->update($cleanPost['id'], [
                     'phone' => $cleanPost['phone'],
                     'facebook' => $cleanPost['facebook'],

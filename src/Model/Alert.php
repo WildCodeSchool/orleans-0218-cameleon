@@ -5,6 +5,7 @@
  * Date: 04/04/18
  * Time: 16:31
  */
+
 namespace Model;
 
 class Alert

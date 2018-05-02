@@ -82,7 +82,7 @@ abstract class AbstractManager
     public function insert(array $data)
     {
         $query = "INSERT INTO $this->table (";
-        foreach($data as $key=>$value){
+        foreach ($data as $key => $value) {
             $queryKey[] = $key;
         }
         $query .= implode(', ', $queryKey);
@@ -90,7 +90,7 @@ abstract class AbstractManager
         $query .= implode(', :', $queryKey);
         $query .= ')';
         $statement = $this->pdoConnection->prepare($query);
-        foreach($data as $key=>$value){
+        foreach ($data as $key => $value) {
             $statement->bindValue($key, $value);
         }
         $statement->execute();
@@ -105,7 +105,7 @@ abstract class AbstractManager
     public function update(int $id, array $data)
     {
         $query = "UPDATE $this->table SET ";
-        foreach($data as $key=>$value){
+        foreach ($data as $key => $value) {
             $queryParts[] = $key . "=:" . $key;
         }
         $query .= implode(', ', $queryParts); // on retire la virgule en trop pour la requete
@@ -113,7 +113,7 @@ abstract class AbstractManager
 
         $statement = $this->pdoConnection->prepare($query);
         $statement->bindValue('id', $id);
-        foreach($data as $key=>$value){
+        foreach ($data as $key => $value) {
             $statement->bindValue($key, $value);
         }
         $statement->execute();
@@ -125,13 +125,13 @@ abstract class AbstractManager
      *
      * @return array
      */
-     public function selectFirst()
+    public function selectFirst()
     {
         return $this->pdoConnection->query('SELECT * FROM ' . $this->table . ' LIMIT 1 ', \PDO::FETCH_CLASS, $this->className)->fetch();
     }
 
-    public function selectWithLimit($offset=0, $limit=1)
+    public function selectWithLimit($offset = 0, $limit = 1)
     {
-      return $this->pdoConnection->query('SELECT * FROM ' . $this->table . ' LIMIT ' . $offset . ',' . $limit, \PDO::FETCH_CLASS, $this->className)->fetchAll();
+        return $this->pdoConnection->query('SELECT * FROM ' . $this->table . ' LIMIT ' . $offset . ',' . $limit, \PDO::FETCH_CLASS, $this->className)->fetchAll();
     }
 }

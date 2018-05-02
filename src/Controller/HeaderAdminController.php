@@ -34,7 +34,7 @@ class HeaderAdminController extends AbstractController
         $sliderManager = new SliderManager();
         $slider = $sliderManager->selectAll();
         return $this->twig->render('admin/header.html.twig',
-            ['alert' => $alert, 'slider'=>$slider, 'notification' => $notification]);
+            ['alert' => $alert, 'slider' => $slider, 'notification' => $notification]);
     }
 
     public function editAlert()
@@ -51,7 +51,7 @@ class HeaderAdminController extends AbstractController
                 }
                 $alert = $alertManager->selectFirst();
                 $alertManager->update($alert->getId(), [
-                    'alert'=>$message,
+                    'alert' => $message,
                     'activated' => $activated
                 ]);
             } catch (\Exception $e) {
@@ -72,10 +72,10 @@ class HeaderAdminController extends AbstractController
             $notification = new Notification();
             $upload = new Upload('upload/slider');
             $path = $upload->add($_FILES['picture']);
-            if ($path){
+            if ($path) {
                 $notification->setNotification('success', 'L\'enregistrement s\'est bien déroulé');
                 $sliderManager->insert([
-                    'picture'=>$path,
+                    'picture' => $path,
                     'alt' => $cleanPost['alt']
                 ]);
             }

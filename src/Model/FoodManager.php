@@ -26,7 +26,8 @@ class FoodManager extends AbstractManager
             \PDO::FETCH_ASSOC)->fetchAll();
     }
 
-    public function selectFoodByCategoryAdmin(): array {
+    public function selectFoodByCategoryAdmin(): array
+    {
         return $this->pdoConnection->query('
             SELECT *,f.name AS foodName, c.name AS categoryName, c.id AS categoryId, f.id AS foodId 
             FROM food AS f 

@@ -10,8 +10,6 @@
 namespace Controller;
 
 
-
-
 /**
  * Class ItemController
  */
@@ -47,14 +45,14 @@ class MainController extends AbstractController
         $sliderManager = new SliderManager();
         $slider = $sliderManager->selectAll();
         return $this->twig->render('main/index.html.twig', [
-                'alert' => $alert, 
-                'slider'=> $slider, 
-                'team'=>$team, 
-                'company'=>$company, 
-                'spotlight'=>$spotlight, 
-                'team'=>$team,
-                'pictures'=>$pictures,
+                'alert' => $alert,
+                'slider' => $slider,
+                'team' => $team,
+                'company' => $company,
+                'spotlight' => $spotlight,
+                'team' => $team,
+                'pictures' => $pictures,
             ]
-         );
+        );
     }
 }

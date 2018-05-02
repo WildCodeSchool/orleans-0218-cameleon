@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %}{% endblock %}</title>
+    <title>Le cameleon voyageur{% block title %}{% endblock %}</title>
     <!-- Latest compiled and minified CSS & JS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -13,18 +13,16 @@
     <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
     {% block stylesheet %}{% endblock %}
 
-    <link rel="icon" href="/assets/images/favicon.png">
+    <link rel="icon" href="/assets/images/logo_cameleon.png">
 
-    <link href="https://fonts.googleapis.com/css?family=Mina" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body>
-    {% block body %}{% endblock %}
-    <script src="/assets/js/jquery.js"></script>
-    <script src="/assets/js/bootstrap.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
-    {% block javascript %}{% endblock %}
+{% block body %}{% endblock %}
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/bootstrap.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+{% block javascript %}{% endblock %}
 </body>
 
 </html>

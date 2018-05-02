@@ -2,14 +2,14 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 text-center">
-                <h2>Galerie d'images</h2>
+                <h2>Galerie</h2>
             </div>
         </div>
         <div class="row">
             {% for picture in pictures %}
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 img-container">
                     <a data-toggle="modal" data-target="#galleryModal{{ loop.index }}">
-                        <img class="image-responsive" src="{{ picture.path}} " alt="{{ picture.alt }}">
+                        <img class="image-responsive" src="{{ picture.path }} " alt="{{ picture.alt }}">
                     </a>
                 </div>
                 <div class="modal" id="galleryModal{{ loop.index }}" tabindex="-1" role="dialog">
@@ -25,6 +25,6 @@
         </div>
     </div>
     <div class="button-container text-center">
-        <a class="btn" href="/gallery" role="button">Voir plus d'images</a>
+        <a class="btn" href="/gallery" role="button"><span class="glyphicon glyphicon-camera"></span> VOIR PLUS D'IMAGES</a>
     </div>
 </section>

@@ -1,14 +1,8 @@
 <header class="container-fluid slider">
-    {% if slider[0].picture is defined %} <img src="{{ slider[0].picture }}" alt="{{ slider[0].alt }}" class="img-responsive visible-xs img-slider"> {%  endif %}
+    {% if slider[0].picture is defined %} <img src="{{ slider[0].picture }}" alt="{{ slider[0].alt }}"
+                                               class="img-responsive visible-xs img-slider"> {% endif %}
 
     <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
-
-        <ol class="carousel-indicators">
-            {% for image in slider %}
-                <li data-target="#carousel-example-generic" data-slide-to="{{ loop.index0 }}" {% if loop.index0 == 0 %} class="active" {% endif %}></li>
-            {% endfor %}
-
-        </ol>
 
         <div class="carousel-inner" role="listbox">
             {% for image in slider %}
@@ -22,11 +16,11 @@
         </div>
 
         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span aria-hidden="true" class="slider-indicator">a</span>
             <span class="sr-only">Previous</span>
         </a>
         <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span aria-hidden="true" class="slider-indicator">Z</span>
             <span class="sr-only">Next</span>
         </a>
     </div>

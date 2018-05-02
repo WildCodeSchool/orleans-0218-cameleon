@@ -18,7 +18,7 @@ class Picture
     /**
      * @return int
      */
-    public function getId() : int
+    public function getId(): int
     {
         return $this->id;
     }
@@ -50,7 +50,7 @@ class Picture
     /**
      * @return string
      */
-    public function getAlt() : ?string
+    public function getAlt(): ?string
     {
         return $this->alt;
     }

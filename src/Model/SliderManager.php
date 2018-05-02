@@ -5,6 +5,7 @@
  * Date: 04/04/18
  * Time: 16:28
  */
+
 namespace Model;
 
 class SliderManager extends AbstractManager

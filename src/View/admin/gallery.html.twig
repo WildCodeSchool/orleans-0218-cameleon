@@ -1,42 +1,62 @@
 {% extends '/admin/body.html.twig' %}
 {% block content %}
     <section class="gallery-admin">
+        <h3>Gestion de la galerie</h3>
         <div class="container">
-            <div class="jumbotron">
-                <h3>Gestion de la galerie</h3>
-                <form action="/admin/gallery/insert" method="post" enctype="multipart/form-data" class="form-inline text-center">
-                    <div class="form-group">
-                        <label for="file">Fichier</label>
-                        <input type="file" class="form-control" name="file" id="file">
-                    </div>
-                    <div class="form-group">
-                        <label for="alt">Description</label>
-                        <input type="text" class="form-control" name="alt" id="alt" placeholder="Description de l'image">
-                    </div>
-                    <button type="submit" name="submit" class="btn btn-primary">Envoyer</button>
-                </form>
-            </div>
-            <table class="table table-striped table-hover">
-                <thead>
-                <tr>
-                    <th>Images</th>
-                    <th class="text-right">Supprimer</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for picture in pictures %}
-                    <tr>
-                        <td><img class="img-container" src="../{{ picture.path }}" alt="{{ picture.alt }}"></td>
-                        <td>
-                            <form action="/admin/gallery/delete/" method="post" class="text-right">
-                                <input type="hidden" name="id" value="{{ picture.id }}">
-                                <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Supprimer</button>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-theme">
+                        <div class="panel-heading">Nouvelle Image</div>
+                        <div class="panel-body">
+                            <form action="/admin/gallery/insert" method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="alt">Description</label>
+                                    <input type="text" class="form-control" name="alt" id="alt"
+                                           placeholder="Description de l'image">
+                                </div>
+                                <div class="form-group">
+                                    <label for="file">Fichier</label>
+                                    <input type="file" name="file" id="file">
+                                </div>
+                                <button type="submit" name="submit" class="btn btn-primary">Valider</button>
                             </form>
-                        </td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-theme">
+                        <div class="panel-heading">Liste d'images</div>
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Description</th>
+                                <th>Supprimer</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for picture in pictures %}
+                                <tr>
+                                    <td><img class="img-container" src="../{{ picture.path }}" alt="{{ picture.alt }}">
+                                    </td>
+                                    <td class="description">
+                                        <p>{{ picture.alt }}</p>
+                                    </td>
+                                    <td>
+                                        <form action="/admin/gallery/delete/" method="post" class="text-right">
+                                            <input type="hidden" name="id" value="{{ picture.id }}">
+                                            <button type="submit" class="btn btn-danger"><span
+                                                        class="glyphicon glyphicon-remove"></span> Supprimer
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 {% endblock %}

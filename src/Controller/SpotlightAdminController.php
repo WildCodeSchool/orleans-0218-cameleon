@@ -31,7 +31,7 @@ class SpotlightAdminController extends AbstractController
         $spotlightManager = new SpotlightManager();
         $spotlight = $spotlightManager->selectFirst();
         return $this->twig->render('admin/spotlight.html.twig',
-            ['spotlight' => $spotlight,'notification' => $notification]);
+            ['spotlight' => $spotlight, 'notification' => $notification]);
     }
 
     public function editSpotlight()
@@ -53,9 +53,9 @@ class SpotlightAdminController extends AbstractController
                     $path = $spotlight->getPhoto();
                 }
                 $spotlightManager->update($cleanPost['id'], [
-                    'text'=>$cleanPost['text'],
-                    'photo'=>$path,
-                    'alt'=>$cleanPost['alt']]);
+                    'text' => $cleanPost['text'],
+                    'photo' => $path,
+                    'alt' => $cleanPost['alt']]);
 
             } catch (\Exception $e) {
                 $notification->setNotification('danger', $e->getMessage());
